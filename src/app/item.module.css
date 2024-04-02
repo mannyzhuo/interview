@@ -1,0 +1,45 @@
+
+.througn {
+    text-decoration: line-through;
+  }
+
+  .item {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    outline-color: white;
+  }
+  .p {
+    padding-left: 10px;
+    cursor: pointer;
+    white-space: nowrap; /* 防止文字换行 */
+    overflow: hidden; /* 超出部分隐藏 */
+    text-overflow: ellipsis; /* 显示省略号 */
+  }
+  
+  
+   /* 隐藏原始的checkbox */
+ .input[type="checkbox"] {
+    display: none;
+  }
+
+ /* 自定义checkbox的样式 */
+ .input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; /* checkbox的宽度 */
+    height: 24px; /* checkbox的高度 */
+    background-color: #fff; /* 默认背景色 */
+    border-radius: 400px; /* 圆角 */
+    text-align: center;
+    border: 0.5px solid #999;
+    cursor: pointer;
+
+}
+
+/* 当checkbox被选中时，修改背景色 */
+.input[type="checkbox"]:checked + label::before {
+      content: "\2713"; /* 对号的 Unicode 编码 */
+    background: linear-gradient(to bottom, #3498db, #9b59b6); /* 从上到下渐变 */
+  }
